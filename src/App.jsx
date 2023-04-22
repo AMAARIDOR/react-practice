@@ -22,7 +22,7 @@ const people = [{
     id: 5,
     name: 'Subrahmanyan Chandrasekhar',
     profession: 'astrophysicist',
-  }];
+}];
 
 function App() {
     const chemists = people.filter(person => person.profession === "chemist")
