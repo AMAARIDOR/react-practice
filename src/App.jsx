@@ -2,17 +2,25 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 
-function Avatar({ person, height }) {
+function Item({ name, isPacked }) {
     return (
-        <div>
-            The the word's greatest person is {person.name}, {person.age} years
-            old and he is {height}cm tall
-        </div>
-    );
+        <li className="item">
+            {isPacked ? ( <del> {name + " ✔"} </del> ) : name}
+        </li>
+    )
 }
 
 function App() {
-    return <Avatar person={{ name: "Amaari", age: 20 }} height={176} />;
+    return (
+        <>
+        <ul>
+            <Item isPacked={true} name="Space Suit" />
+            <Item isPacked={false} name="Helmet with a golden Leaf" />
+            <Item isPacked={true} name="Cologne" />
+            <Item isPacked={true} name="Photo of Jerry" />
+        </ul>
+        </>
+    )
 }
 
 export default App;
