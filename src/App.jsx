@@ -2,23 +2,38 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 
-function Item({ name, isPacked }) {
-    return (
-        <li className="item">
-            {isPacked ? ( <del> {name + " ✔"} </del> ) : name}
-        </li>
-    )
-}
+const people = [{
+    id: 1,
+    name: 'Creola Katherine Johnson',
+    profession: 'mathematician',
+  }, {
+    id: 2,
+    name: 'Mario José Molina-Pasquel Henríquez',
+    profession: 'chemist',
+  }, {
+    id: 3,
+    name: 'Mohammad Abdus Salam',
+    profession: 'physicist',
+  }, {
+    id: 4,
+    name: 'Percy Lavon Julian',
+    profession: 'chemist',  
+  }, {
+    id: 5,
+    name: 'Subrahmanyan Chandrasekhar',
+    profession: 'astrophysicist',
+  }];
 
 function App() {
+    const chemists = people.filter(person => person.profession === "chemist")
+    
+    const listItems = chemists.map(person => <li key={person.id}> {person.name} {person.profession} </li>)
+
     return (
         <>
-        <ul>
-            <Item isPacked={true} name="Space Suit" />
-            <Item isPacked={false} name="Helmet with a golden Leaf" />
-            <Item isPacked={true} name="Cologne" />
-            <Item isPacked={true} name="Photo of Jerry" />
-        </ul>
+            <ul>
+                {listItems}
+            </ul>
         </>
     )
 }
