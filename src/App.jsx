@@ -10,5 +10,9 @@ const initialArray = [
 ];
 
 export default function App() {
-  return <button>I don't do anything</button>;
+  function handleClick() {
+    alert("You clicked me!");
+  }
+
+  return <button onClick={handleClick}>I do something</button>;
 }
