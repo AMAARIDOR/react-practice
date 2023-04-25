@@ -2,8 +2,8 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 
-function Button({ onClick, children }) {
-  return <button onClick={onClick}>{children}</button>;
+function Button({ onSmash, children }) {
+  return <button onClick={onSmash}>{children}</button>;
 }
 
 function PlayButton({ movieName }) {
@@ -11,11 +11,11 @@ function PlayButton({ movieName }) {
     alert(`Playing movie ${movieName}`);
   }
 
-  return <Button onClick={handleClick}>Play {movieName}</Button>;
+  return <Button onSmash={handleClick}>Play {movieName}</Button>;
 }
 
 function UploadButton() {
-  return <Button onClick={() => alert("Uploading!")}>Upload Image</Button>;
+  return <Button onSmash={() => alert("Uploading!")}>Upload Image</Button>;
 }
 
 export default function ToolBar() {
