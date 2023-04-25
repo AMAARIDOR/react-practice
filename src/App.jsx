@@ -2,17 +2,15 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 
-let nextId = 3;
-const initialArray = [
-  { id: 0, title: "Big Bellies", seen: false },
-  { id: 1, title: "Lunar Landscape", seen: false },
-  { id: 2, title: "Terracotta Army", seen: true },
-];
+function AlertButton({ message, children }) {
+  return <button onClick={() => alert(message)}>{children}</button>;
+}
 
 export default function App() {
-  function handleClick() {
-    alert("You clicked me!");
-  }
-
-  return <button onClick={handleClick}>I do something</button>;
+  return (
+    <div>
+      <AlertButton message={"Playing!"}>Play Movie</AlertButton>
+      <AlertButton message={"Uploading!"}>Upload Video</AlertButton>
+    </div>
+  );
 }
