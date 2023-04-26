@@ -4,14 +4,9 @@ import viteLogo from "/vite.svg";
 
 export default function App() {
     return (
-        <div
-            className="Toolbar"
-            onClick={() => {
-                alert("You clicked on the this toolbar!");
-            }}
-        >
-            <button onClick={() => alert("Playing")}>Play movie</button>
-            <button onClick={() => alert("Upoading")}>Upload Image</button>
-        </div>
+        <form onSubmit={() => alert("Submitting")}>
+            <input />
+            <button>Send</button>
+        </form>
     );
 }
