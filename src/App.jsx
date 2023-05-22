@@ -11,8 +11,6 @@ function Input() {
         <div className="inputContainer">
             <input type="text" onChange={handleChange} value={message} />
             <button onClick={handleClick}>Add Item +</button>
-            <div>{message}</div>
-            <div>{update}</div>
         </div>
     );
 }
