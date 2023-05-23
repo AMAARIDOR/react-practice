@@ -1,5 +1,9 @@
 import { useState } from "react";
 
+function ItemRow({ update }) {
+    return <div className="itemsRow"></div>;
+}
+
 function Input() {
     const [message, setMessage] = useState("");
     const [update, setUpdated] = useState(message);
@@ -15,8 +19,8 @@ function Input() {
     );
 }
 
-function Item({ value }) {
-    return <div className="itemContainer">{value}</div>;
+function Item({ update }) {
+    return <div className="itemContainer">{update}</div>;
 }
 
 export default function App() {
