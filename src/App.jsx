@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function ItemRow({ update }) {
+function ItemRow() {
     return <div className="itemsRow"></div>;
 }
 
